@@ -87,7 +87,7 @@ export const WorkItemStyle = styled.div`
     border-radius: 1rem;
     width: 250px;
 
-    transition: transform 0.7s;
+    transition: transform 0.8s;
 
     :hover{
         transform: scale(1.03);
