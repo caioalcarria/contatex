@@ -17,33 +17,47 @@ export const CreateContact = ()=>{
 
     return(
         <ContactStyle className="section" id="contact">
-            <h2 className="section__title">Contatos</h2>
-            <span className="section__subtitle">Formas de contactar</span>
+            <h2 className="section__title"> Cadastrar novo contato</h2>
+            <span className="section__subtitle"></span>
 
             <div className="container grid">
                 
 
                 <div className="contact__content">
-                    <h3>Escreva uma mensagem</h3>
-
+                    
                     <form ref={form} onSubmit={sendEmail}>
                         <div>
                             <label>Nome</label>
-                            <input type="text" name="name" placeholder="Insira seu nome" />
+                            <input type="text" name="name" placeholder="Insira o nome" />
                         </div>
 
                         <div>
                             <label>Email</label>
-                            <input type="email" name="elail" placeholder="Insira seu nome email" />
+                            <input type="email" name="elail" placeholder="Insira o email" />
                         </div>
 
-                        <div className="contact__form-area">
-                            <label>Mensagem</label>
-                            <textarea name="messege" placeholder="Escreva sua mensagem" cols={30} rows={10} />
+                        <div>
+                            <label>Telefone</label>
+                            <input type="email" name="elail" placeholder="Insira o telefone" />
+                        </div>
+
+                        <div>
+                            <label>Linkedin</label>
+                            <input type="email" name="elail" placeholder="Insira o linkedin" />
+                        </div>
+
+                        <div>
+                            <label>Foto</label>
+                            <input type="email" name="elail" placeholder="Insira uma foto" />
+                        </div>
+
+                        <div>
+                            <label>Setor</label>
+                            <input type="email" name="elail" placeholder="Informe um setor" />
                         </div>
 
                         <button type='submit' className="button button--flex">
-                            Enviar mensagem
+                            Cadastrar
                             <svg
                             className="button__icon"
                             xmlns="http://www.w3.org/2000/svg"
