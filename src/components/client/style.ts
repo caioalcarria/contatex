@@ -1,26 +1,35 @@
 import styled from "styled-components";
 
 export const WorkStyle = styled.section`
+width: 100vw;
 
 `
 
 export const WorksStyle = styled.div`
-    .work__filters{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 0.75rem;
-        
-        margin-bottom: var(--mb-2);
-    }
+   display: flex;
+   justify-content: center;
 
-    .container{
-        grid-template-columns: repeat(2, max-content);
-        gap: 3rem;
-        justify-content: center;
+    .containerx {
         
-    }
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: center;
+  width: 90vw;
+  
+}
 
+.containerx::-webkit-scrollbar {
+  display: none; /* Torna a barra de rolagem invisível no Chrome e Safari */
+}
+
+.containerx::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+.containerx::-webkit-scrollbar-thumb {
+  background-color: transparent; 
+}
     span{
         cursor: pointer;
         color: var(--title-color);
@@ -41,19 +50,19 @@ export const WorksStyle = styled.div`
     }
 
     @media screen and (max-width: 992px) {
-        .container{
+        .containerx{
             gap: 3rem;
         }
     }
 
     @media screen and (max-width: 768px) {
-        .container{
+        .containerx{
             grid-template-columns: max-content;
         }
     }
 
     @media screen and (max-width: 576px) {
-        .container{
+        .containerx{
             grid-template-columns: 1fr;
         }
     }
@@ -76,6 +85,7 @@ export const WorkItemStyle = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.25rem;
     border-radius: 1rem;
+    width: 250px;
 
     transition: transform 0.7s;
 
@@ -84,7 +94,8 @@ export const WorkItemStyle = styled.div`
     }
 
     img{
-        width: 295px;
+        width: 250px;
+        object-fit: cover;
         border-radius: 1rem;
         margin-bottom: var(--mb-1);
     }

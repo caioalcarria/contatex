@@ -1,9 +1,9 @@
 import "./App.css"
-import { Contact } from "./components/Contact/"
+import { CreateContact } from "./components/createContact"
 import { Header } from "./components/Header"
 import { Scrollup } from "./components/Scrollup"
-import { Skills } from "./components/Skills"
-import { Work } from "./components/Work"
+import { Contact } from "./components/contact"
+import { Client } from "./components/client"
 
 function App() {
 
@@ -12,9 +12,9 @@ function App() {
     <>
       <Header />
       <main>
-        <Skills />
-        <Work />
+        <Client/>
         <Contact />
+        <CreateContact/>
       </main>
       <Scrollup />
     </>

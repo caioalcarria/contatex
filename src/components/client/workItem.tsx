@@ -3,7 +3,7 @@ import { WorkItemStyle } from "./style"
 export interface IProps{
     item: {
         id: number;
-        image: string,
+        photo: string,
         email:string,
         phone: string,
         name: string,
@@ -14,7 +14,7 @@ export interface IProps{
 export const WorkItem = ({item}:IProps)=>{
     return(
         <WorkItemStyle>
-            <img src={item.image} alt="" />
+            <img src={item.photo} alt="" />
             <h3>{item.name}</h3>
             <h2>{item.email}</h2>
             <a href={item.phone} target="_blank">Phone <i className="bx bx-right-arrow-alt" /></a>

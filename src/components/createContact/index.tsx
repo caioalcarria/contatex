@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { ContactStyle } from "./style"
 
 
-export const Contact = ()=>{
+export const CreateContact = ()=>{
 
     const form = useRef<any>();
 
