@@ -4,7 +4,7 @@ import { WorkItem } from "./workItem"
 
 interface IProject {
   id: number;
-  image: string,
+  photo: string,
   email: string,
   phone: string,
   name: string,
