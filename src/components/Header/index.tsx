@@ -20,7 +20,7 @@ export const Header = ()=>{
                     <ul className="grid">
                         <li className="nav__item">
                             <a href="#home" className="home">
-                                <i className="uil uil-estate nav__icon" />  Sair
+                                <i className="uil uil-estate nav__icon" />  
                             </a>
                         </li>
 
