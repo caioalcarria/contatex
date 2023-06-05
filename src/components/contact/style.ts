@@ -76,7 +76,7 @@ export const WorkItemStyle = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.25rem;
     border-radius: 1rem;
-    width: 350px;
+    width: 400px;
     justify-content: space-between;
     
     display: flex;

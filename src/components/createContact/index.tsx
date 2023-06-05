@@ -1,5 +1,7 @@
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
+import Toast from './toastWarning'
+import axios from 'axios';
+
 
 import { ContactStyle } from "./style"
 
@@ -8,12 +10,40 @@ export const CreateContact = ()=>{
 
     const form = useRef<any>();
 
-    const sendEmail = (e:any) => {
-    e.preventDefault();
+    const [data, setData] = useState<any>({});
 
-        emailjs.sendForm('service_eezxv6b', 'template_a647gc1', form.current, 'AesekR6fVRDC25vPX')
-        e.target.reset()
-    };
+
+
+    const registerUser = async (e: any) => {
+        e.preventDefault();
+        
+
+        try {
+            const formData = new FormData(form.current);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                linkedin: formData.get('linkedin'),
+                photo: formData.get('photo'),
+                sector: formData.get('sector')
+              };
+            console.log(data)
+            const response = await axios.post('https://tense-earmuffs-lamb.cyclic.app/contacts', data);
+            console.log(response.data);
+            Toast('success', 'Conta criada com sucesso!')
+        } catch (error: any) {
+            console.log(error.response.data);
+            Toast('error', 'Ops! Algo deu errado')
+        }
+        form.current.reset();
+    }
+
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    }
+
 
     return(
         <ContactStyle className="section" id="contact">
@@ -25,7 +55,7 @@ export const CreateContact = ()=>{
 
                 <div className="contact__content">
                     
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form ref={form} onSubmit={registerUser}>
                         <div>
                             <label>Nome</label>
                             <input type="text" name="name" placeholder="Insira o nome" />
@@ -33,27 +63,27 @@ export const CreateContact = ()=>{
 
                         <div>
                             <label>Email</label>
-                            <input type="email" name="elail" placeholder="Insira o email" />
+                            <input type="email" name="email" placeholder="Insira o email" />
                         </div>
 
                         <div>
                             <label>Telefone</label>
-                            <input type="email" name="elail" placeholder="Insira o telefone" />
+                            <input type="text" name="phone" placeholder="Insira o telefone" />
                         </div>
 
                         <div>
                             <label>Linkedin</label>
-                            <input type="email" name="elail" placeholder="Insira o linkedin" />
+                            <input type="text" name="linkedin" placeholder="Insira o linkedin" />
                         </div>
 
                         <div>
                             <label>Foto</label>
-                            <input type="email" name="elail" placeholder="Insira uma foto" />
+                            <input type="text" name="photo" placeholder="Insira uma foto" />
                         </div>
 
                         <div>
                             <label>Setor</label>
-                            <input type="email" name="elail" placeholder="Informe um setor" />
+                            <input type="text" name="sector" placeholder="Informe um setor" />
                         </div>
 
                         <button type='submit' className="button button--flex">
